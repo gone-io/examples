@@ -1,2 +1,3 @@
 # examples
-demo projects
+
+- [simple](simple)
