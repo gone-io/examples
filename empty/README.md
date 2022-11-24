@@ -57,7 +57,7 @@
 > 下列命令使用Makefile定义，系统中需要安装Make(参考[安装make](https://cn.bing.com/search?q=%E5%AE%89%E8%A3%85+make))
 
 - `make gone`   
-  用于生成Priest代码，在IED中运行前⚠️必须⚠️要先执行该命令，否则代码不完整
+  用于生成Priest代码，在IED中运行前**⚠️必须先执行**该命令，否则代码不完整无法运行
 
 - `make run`  
   运行代码，已经集成了`make gone`
