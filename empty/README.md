@@ -74,5 +74,6 @@
 ## 该项目可以作为一个模板项目，包名为`demo-structure`，可以批量替换修改调整为想要的包名，用于业务开发
 ```shell
 your_package_name=YOUR_NEW_PACKAGE_NAME
-sed -i "s/demo-structure/$your_package_name/g" `grep demo-structure -rl ./`
+sed -i '' "s/demo-structure/$your_package_name/g" `grep demo-structure -rl --exclude="./bin/*" --exclude="./README.md"`
+go mod tidy
 ```
