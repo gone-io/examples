@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8
+    platform: linux/x86_64
+    ports:
+      - '23306:3306'
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      # 数据库还原目录 可将需要还原的sql文件放在这里
+      - ./scripts/sql/db.init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${mysql_root_password}
+      TZ: Asia/Shanghai
+  redis:
+    image: user-center-service
+    build:
+      context: .
+      args:
+        ENVIRONMENT: prod
+    restart: always
+    ports:
+      - '8080:8080'
